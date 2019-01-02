@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelWindow id="pw1">
+                    <af:panelFormLayout id="pfl1">
+                        <af:inputText value="#{bindings.RoleId.inputValue}" label="#{bindings.RoleId.hints.label}"
+                                      required="#{bindings.RoleId.hints.mandatory}"
+                                      columns="#{bindings.RoleId.hints.displayWidth}"
+                                      maximumLength="#{bindings.RoleId.hints.precision}"
+                                      shortDesc="#{bindings.RoleId.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.RoleId.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.RoleId.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Name.inputValue}" label="#{bindings.Name.hints.label}"
+                                      required="#{bindings.Name.hints.mandatory}"
+                                      columns="#{bindings.Name.hints.displayWidth}"
+                                      maximumLength="#{bindings.Name.hints.precision}"
+                                      shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.Name.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Desc1.inputValue}" label="#{bindings.Desc1.hints.label}"
+                                      required="#{bindings.Desc1.hints.mandatory}"
+                                      columns="#{bindings.Desc1.hints.displayWidth}"
+                                      maximumLength="#{bindings.Desc1.hints.precision}"
+                                      shortDesc="#{bindings.Desc1.hints.tooltip}" id="it3">
+                            <f:validator binding="#{bindings.Desc1.validator}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.StartDate.inputValue}" label="#{bindings.StartDate.hints.label}"
+                                      required="#{bindings.StartDate.hints.mandatory}"
+                                      columns="#{bindings.StartDate.hints.displayWidth}"
+                                      shortDesc="#{bindings.StartDate.hints.tooltip}" id="id1">
+                            <f:validator binding="#{bindings.StartDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+                        </af:inputDate>
+                        <af:inputDate value="#{bindings.EndDate.inputValue}" label="#{bindings.EndDate.hints.label}"
+                                      required="#{bindings.EndDate.hints.mandatory}"
+                                      columns="#{bindings.EndDate.hints.displayWidth}"
+                                      shortDesc="#{bindings.EndDate.hints.tooltip}" id="id2">
+                            <f:validator binding="#{bindings.EndDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.CreatedBy.inputValue}" label="#{bindings.CreatedBy.hints.label}"
+                                      required="#{bindings.CreatedBy.hints.mandatory}"
+                                      columns="#{bindings.CreatedBy.hints.displayWidth}"
+                                      maximumLength="#{bindings.CreatedBy.hints.precision}"
+                                      shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4">
+                            <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.CreatedDate.inputValue}"
+                                      label="#{bindings.CreatedDate.hints.label}"
+                                      required="#{bindings.CreatedDate.hints.mandatory}"
+                                      columns="#{bindings.CreatedDate.hints.displayWidth}"
+                                      shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="id3">
+                            <f:validator binding="#{bindings.CreatedDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.ModifiedBy.inputValue}"
+                                      label="#{bindings.ModifiedBy.hints.label}"
+                                      required="#{bindings.ModifiedBy.hints.mandatory}"
+                                      columns="#{bindings.ModifiedBy.hints.displayWidth}"
+                                      maximumLength="#{bindings.ModifiedBy.hints.precision}"
+                                      shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it5">
+                            <f:validator binding="#{bindings.ModifiedBy.validator}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.ModifiedDate.inputValue}"
+                                      label="#{bindings.ModifiedDate.hints.label}"
+                                      required="#{bindings.ModifiedDate.hints.mandatory}"
+                                      columns="#{bindings.ModifiedDate.hints.displayWidth}"
+                                      shortDesc="#{bindings.ModifiedDate.hints.tooltip}" id="id4">
+                            <f:validator binding="#{bindings.ModifiedDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.ModifiedDate.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                      required="#{bindings.Id.hints.mandatory}"
+                                      columns="#{bindings.Id.hints.displayWidth}"
+                                      maximumLength="#{bindings.Id.hints.precision}"
+                                      shortDesc="#{bindings.Id.hints.tooltip}" id="it6">
+                            <f:validator binding="#{bindings.Id.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:panelGroupLayout layout="vertical" id="pgl2">
+                                <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                </af:panelGroupLayout>
+                                <af:button text="Submit" id="b5"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

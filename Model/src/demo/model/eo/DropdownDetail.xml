@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DropdownDetail"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DROPDOWN_DETAIL"
+  AliasName="DropdownDetail"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="DropdownDdId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="DROPDOWN_DD_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="DROPDOWN_DETAIL"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Value"
+    Precision="30"
+    ColumnName="VALUE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DROPDOWN_DETAIL"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DetailId"
+    Precision="10"
+    Scale="0"
+    ColumnName="DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="DROPDOWN_DETAIL"
+    PrimaryKey="true"/>
+  <AccessorAttribute
+    Name="Dropdown"
+    Association="demo.model.eo.DdDetailDdFkAssoc"
+    AssociationEnd="demo.model.eo.DdDetailDdFkAssoc.Dropdown"
+    AssociationOtherEnd="demo.model.eo.DdDetailDdFkAssoc.DropdownDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DropdowndetailPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DROPDOWNDETAIL_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.DropdownDetail.DropdownDdId"/>
+      <Item Value="demo.model.eo.DropdownDetail.Value"/>
+      <Item Value="demo.model.eo.DropdownDetail.DetailId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DdDetailDdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DROPDOWN_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DD_DETAIL_DD_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.DropdownDetail.DropdownDdId"/>
+    </AttrArray>
+  </Key>
+</Entity>

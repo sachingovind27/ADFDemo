@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProdCategory"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PROD_CATEGORY"
+  AliasName="ProdCategory"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="CatId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="CAT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROD_CATEGORY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CatName"
+    Precision="100"
+    ColumnName="CAT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROD_CATEGORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROD_CATEGORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="PROD_CATEGORY"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="PROD_CATEGORY"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="100"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROD_CATEGORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Product"
+    Association="demo.model.eo.ProductProdCategoryFkAssoc"
+    AssociationEnd="demo.model.eo.ProductProdCategoryFkAssoc.Product"
+    AssociationOtherEnd="demo.model.eo.ProductProdCategoryFkAssoc.ProdCategory"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ProdCategoryPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PROD_CATEGORY_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.ProdCategory.CatId"/>
+    </AttrArray>
+  </Key>
+</Entity>

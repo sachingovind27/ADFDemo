@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="CreateProductPageDef"
+                Package="demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PersonView1" RangeSize="25" DataControl="AppModuleDataControl" id="PersonView1Iterator"/>
+    <iterator Binds="ProductView1" RangeSize="25" DataControl="AppModuleDataControl" id="ProductView1Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="PersonView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="ProductView1Iterator" id="ProdCode">
+      <AttrNames>
+        <Item Value="ProdCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductView1Iterator" id="ProdDesc">
+      <AttrNames>
+        <Item Value="ProdDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductView1Iterator" id="ProdPrice">
+      <AttrNames>
+        <Item Value="ProdPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductView1Iterator" id="ProdName">
+      <AttrNames>
+        <Item Value="ProdName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ProductView1Iterator" StaticList="false" Uses="LOV_ProdCategoryCatId" id="ProdCategoryCatId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ProductView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductView1Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductView1Iterator" id="ModifiedDate">
+      <AttrNames>
+        <Item Value="ModifiedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProductView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ProductView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ProductView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ProductView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

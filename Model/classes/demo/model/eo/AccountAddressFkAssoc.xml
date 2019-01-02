@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AccountAddressFkAssoc"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Address"
+    Cardinality="1"
+    Source="true"
+    Owner="demo.model.eo.Address">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Address"/>
+      <Attr Name="_foreignKey" Value="demo.model.eo.Address.AddressPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Address.AddrId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Account"
+    Cardinality="-1"
+    Owner="demo.model.eo.Account">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Account"/>
+      <Attr Name="_foreignKey" Value="demo.model.eo.Account.AccountAddressFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Account.AddrId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

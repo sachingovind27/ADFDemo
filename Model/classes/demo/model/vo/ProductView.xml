@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductView"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="ProdCategoryView1"
+    ViewObjectName="demo.model.vo.ProdCategoryView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProdCategoryCatId"
+    ListVOName="ProdCategoryView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProdCategoryCatId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CatId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CatName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Product"
+    Entity="demo.model.eo.Product"/>
+  <ViewAttribute
+    Name="ProdCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProdCode"
+    EntityUsage="Product"
+    AliasName="PROD_CODE"/>
+  <ViewAttribute
+    Name="ProdDesc"
+    PrecisionRule="true"
+    EntityAttrName="ProdDesc"
+    EntityUsage="Product"
+    AliasName="PROD_DESC"/>
+  <ViewAttribute
+    Name="ProdPrice"
+    PrecisionRule="true"
+    EntityAttrName="ProdPrice"
+    EntityUsage="Product"
+    AliasName="PROD_PRICE"/>
+  <ViewAttribute
+    Name="ProdName"
+    PrecisionRule="true"
+    EntityAttrName="ProdName"
+    EntityUsage="Product"
+    AliasName="PROD_NAME"/>
+  <ViewAttribute
+    Name="ProdCategoryId"
+    PrecisionRule="true"
+    EntityAttrName="ProdCategoryId"
+    EntityUsage="Product"
+    AliasName="PROD_CATEGORY_ID"/>
+  <ViewAttribute
+    Name="ProdCategoryCatId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProdCategoryCatId"
+    EntityUsage="Product"
+    AliasName="PROD_CATEGORY_CAT_ID"
+    LOVName="LOV_ProdCategoryCatId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="Product"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="Product"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="ModifiedBy"
+    PrecisionRule="true"
+    EntityAttrName="ModifiedBy"
+    EntityUsage="Product"
+    AliasName="MODIFIED_BY"/>
+  <ViewAttribute
+    Name="ModifiedDate"
+    PrecisionRule="true"
+    EntityAttrName="ModifiedDate"
+    EntityUsage="Product"
+    AliasName="MODIFIED_DATE"/>
+  <ViewLinkAccessor
+    Name="RevenueItemView"
+    ViewLink="demo.model.vo.RevenueItemProductFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

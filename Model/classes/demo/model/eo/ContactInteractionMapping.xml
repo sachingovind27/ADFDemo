@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactInteractionMapping"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CONTACT_INTERACTION_MAPPING"
+  AliasName="ContactInteractionMapping"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="OpportunityOppId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="OPPORTUNITY_OPP_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CONTACT_INTERACTION_MAPPING"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ContactContId"
+    IsNotNull="true"
+    Precision="9"
+    Scale="0"
+    ColumnName="CONTACT_CONT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="CONTACT_INTERACTION_MAPPING"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="InteractionInterId"
+    IsNotNull="true"
+    Precision="9"
+    Scale="0"
+    ColumnName="INTERACTION_INTER_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="CONTACT_INTERACTION_MAPPING"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="25"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTACT_INTERACTION_MAPPING">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CONTACT_INTERACTION_MAPPING"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="25"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTACT_INTERACTION_MAPPING">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CONTACT_INTERACTION_MAPPING"/>
+  <AccessorAttribute
+    Name="Contact"
+    Association="demo.model.eo.ContactInterMapContactFkAssoc"
+    AssociationEnd="demo.model.eo.ContactInterMapContactFkAssoc.Contact"
+    AssociationOtherEnd="demo.model.eo.ContactInterMapContactFkAssoc.ContactInteractionMapping"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Interaction"
+    Association="demo.model.eo.ContactInterMapInterFkAssoc"
+    AssociationEnd="demo.model.eo.ContactInterMapInterFkAssoc.Interaction"
+    AssociationOtherEnd="demo.model.eo.ContactInterMapInterFkAssoc.ContactInteractionMapping"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Opportunity"
+    Association="demo.model.eo.ContactInterMapOpporFkAssoc"
+    AssociationEnd="demo.model.eo.ContactInterMapOpporFkAssoc.Opportunity"
+    AssociationOtherEnd="demo.model.eo.ContactInterMapOpporFkAssoc.ContactInteractionMapping"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ContactInteractionMappingPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CONTACT_INTERACTION_MAPPING_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.ContactInteractionMapping.InteractionInterId"/>
+      <Item Value="demo.model.eo.ContactInteractionMapping.OpportunityOppId"/>
+      <Item Value="demo.model.eo.ContactInteractionMapping.ContactContId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ContactInterMapContactFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CONTACT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CONTACT_INTER_MAP_CONTACT_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.ContactInteractionMapping.ContactContId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ContactInterMapInterFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="INTERACTION_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CONTACT_INTER_MAP_INTER_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.ContactInteractionMapping.InteractionInterId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ContactInterMapOpporFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="OPPORTUNITY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CONTACT_INTER_MAP_OPPOR_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.ContactInteractionMapping.OpportunityOppId"/>
+    </AttrArray>
+  </Key>
+</Entity>

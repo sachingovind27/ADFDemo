@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="view1">
+    <page>/admin.jsf</page>
+  </view>
+  <managed-bean id="__1">
+    <managed-bean-name>PopupManager</managed-bean-name>
+    <managed-bean-class>demo.manager.PopupManager</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NoteMapping"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="NOTE_MAPPING"
+  AliasName="NoteMapping"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="NoteNoteId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="NOTE_NOTE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="NOTE_MAPPING"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="NoteMapType"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="NOTE_MAP_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_MAPPING"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NoteMapId"
+    Precision="10"
+    Scale="0"
+    ColumnName="NOTE_MAP_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="NOTE_MAPPING"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_MAPPING">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="NOTE_MAPPING"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="100"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_MAPPING">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="NOTE_MAPPING"/>
+  <AccessorAttribute
+    Name="Note"
+    Association="demo.model.eo.NoteMapNoteFkAssoc"
+    AssociationEnd="demo.model.eo.NoteMapNoteFkAssoc.Note"
+    AssociationOtherEnd="demo.model.eo.NoteMapNoteFkAssoc.NoteMapping"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="NoteMappingPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="NOTE_MAPPING_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.NoteMapping.NoteNoteId"/>
+      <Item Value="demo.model.eo.NoteMapping.NoteMapType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="NoteMapNoteFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="NOTE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="NOTE_MAP_NOTE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.NoteMapping.NoteNoteId"/>
+    </AttrArray>
+  </Key>
+</Entity>

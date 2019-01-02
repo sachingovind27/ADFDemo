@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelGroupLayout layout="vertical" id="pgl2">
+                    <af:panelHeader text="Product" id="ph1">
+                        <af:query id="qryId1" headerText="Search" disclosed="true"
+                                  value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                  model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                  queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                  queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                  resultComponentId="::resId1">
+                            <af:button text="button 3" id="b4"/>
+                        </af:query>
+                    </af:panelHeader>
+                    <af:table value="#{bindings.ProductView1.collectionModel}" var="row"
+                              rows="#{bindings.ProductView1.rangeSize}"
+                              emptyText="#{bindings.ProductView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ProductView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ProductView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ProductView1.rangeSize}"
+                              filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" varStatus="vs"
+                              id="resId1">
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ProdCode.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.ProdCode.label}"
+                                   id="resId1c1">
+                            <af:link shortDesc="#{bindings.ProductView1.hints.ProdCode.tooltip}" id="ot1"
+                                     text="#{row.ProdCode}">
+                                     <af:showPopupBehavior popupId="p1"/>
+                                     </af:link>
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                                <af:panelFormLayout id="pfl1">
+                                    <af:inputText value="#{row.bindings.ProdCode.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ProdCode.label}"
+                                                  required="#{bindings.ProductView1.hints.ProdCode.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ProdCode.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.ProdCode.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ProdCode.tooltip}" id="it1">
+                                        <f:validator binding="#{row.bindings.ProdCode.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ProductView1.hints.ProdCode.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.ProdDesc.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ProdDesc.label}"
+                                                  required="#{bindings.ProductView1.hints.ProdDesc.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ProdDesc.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.ProdDesc.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ProdDesc.tooltip}" id="it2">
+                                        <f:validator binding="#{row.bindings.ProdDesc.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.ProdPrice.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ProdPrice.label}"
+                                                  required="#{bindings.ProductView1.hints.ProdPrice.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ProdPrice.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.ProdPrice.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ProdPrice.tooltip}" id="it3">
+                                        <f:validator binding="#{row.bindings.ProdPrice.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ProductView1.hints.ProdPrice.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.ProdName.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ProdName.label}"
+                                                  required="#{bindings.ProductView1.hints.ProdName.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ProdName.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.ProdName.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ProdName.tooltip}" id="it4">
+                                        <f:validator binding="#{row.bindings.ProdName.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.ProdCategoryId.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ProdCategoryId.label}"
+                                                  required="#{bindings.ProductView1.hints.ProdCategoryId.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ProdCategoryId.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.ProdCategoryId.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ProdCategoryId.tooltip}"
+                                                  id="it5">
+                                        <f:validator binding="#{row.bindings.ProdCategoryId.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ProductView1.hints.ProdCategoryId.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.ProdCategoryCatId.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ProdCategoryCatId.label}"
+                                                  required="#{bindings.ProductView1.hints.ProdCategoryCatId.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ProdCategoryCatId.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.ProdCategoryCatId.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ProdCategoryCatId.tooltip}"
+                                                  id="it6">
+                                        <f:validator binding="#{row.bindings.ProdCategoryCatId.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ProductView1.hints.ProdCategoryCatId.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.CreatedBy.label}"
+                                                  required="#{bindings.ProductView1.hints.CreatedBy.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.CreatedBy.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.CreatedBy.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.CreatedBy.tooltip}" id="it7">
+                                        <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                                    </af:inputText>
+                                    <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.CreatedDate.label}"
+                                                  required="#{bindings.ProductView1.hints.CreatedDate.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.CreatedDate.displayWidth}"
+                                                  shortDesc="#{bindings.ProductView1.hints.CreatedDate.tooltip}"
+                                                  id="id3">
+                                        <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ProductView1.hints.CreatedDate.format}"/>
+                                    </af:inputDate>
+                                    <af:inputText value="#{row.bindings.ModifiedBy.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ModifiedBy.label}"
+                                                  required="#{bindings.ProductView1.hints.ModifiedBy.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ModifiedBy.displayWidth}"
+                                                  maximumLength="#{bindings.ProductView1.hints.ModifiedBy.precision}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ModifiedBy.tooltip}"
+                                                  id="it8">
+                                        <f:validator binding="#{row.bindings.ModifiedBy.validator}"/>
+                                    </af:inputText>
+                                    <af:inputDate value="#{row.bindings.ModifiedDate.inputValue}"
+                                                  label="#{bindings.ProductView1.hints.ModifiedDate.label}"
+                                                  required="#{bindings.ProductView1.hints.ModifiedDate.mandatory}"
+                                                  columns="#{bindings.ProductView1.hints.ModifiedDate.displayWidth}"
+                                                  shortDesc="#{bindings.ProductView1.hints.ModifiedDate.tooltip}"
+                                                  id="id4">
+                                        <f:validator binding="#{row.bindings.ModifiedDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.ProductView1.hints.ModifiedDate.format}"/>
+                                    </af:inputDate>
+                                    <f:facet name="footer">                                        
+                                        <af:button actionListener="#{bindings.Commit.execute}" text="Submit"
+                                                   disabled="#{!bindings.Commit.enabled}" id="b2"/>
+                                    </f:facet>
+                                </af:panelFormLayout>
+                            </af:popup>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ProdDesc.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.ProdDesc.label}"
+                                   id="resId1c2">
+                            <af:outputText value="#{row.ProdDesc}"
+                                           shortDesc="#{bindings.ProductView1.hints.ProdDesc.tooltip}" id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ProdPrice.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.ProdPrice.label}"
+                                   id="resId1c3">
+                            <af:outputText value="#{row.ProdPrice}"
+                                           shortDesc="#{bindings.ProductView1.hints.ProdPrice.tooltip}" id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ProductView1.hints.ProdPrice.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ProdName.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.ProdName.label}"
+                                   id="resId1c4">
+                            <af:outputText value="#{row.ProdName}"
+                                           shortDesc="#{bindings.ProductView1.hints.ProdName.tooltip}" id="ot4"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ProdCategoryId.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.ProdCategoryId.label}"
+                                   id="resId1c5">
+                            <af:outputText value="#{row.ProdCategoryId}"
+                                           shortDesc="#{bindings.ProductView1.hints.ProdCategoryId.tooltip}" id="ot5">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ProductView1.hints.ProdCategoryId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ProdCategoryCatId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ProductView1.hints.ProdCategoryCatId.label}" id="resId1c6">
+                            <af:outputText value="#{row.ProdCategoryCatId}"
+                                           shortDesc="#{bindings.ProductView1.hints.ProdCategoryCatId.tooltip}"
+                                           id="ot6">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ProductView1.hints.ProdCategoryCatId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.CreatedBy.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.CreatedBy.label}"
+                                   id="resId1c7">
+                            <af:outputText value="#{row.CreatedBy}"
+                                           shortDesc="#{bindings.ProductView1.hints.CreatedBy.tooltip}" id="ot7"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.CreatedDate.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.CreatedDate.label}"
+                                   id="resId1c8">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                              id="id1">
+                                    <af:convertDateTime pattern="#{bindings.ProductView1.hints.CreatedDate.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:outputText value="#{row.CreatedDate}"
+                                           shortDesc="#{bindings.ProductView1.hints.CreatedDate.tooltip}" id="ot8">
+                                <af:convertDateTime pattern="#{bindings.ProductView1.hints.CreatedDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ModifiedBy.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.ModifiedBy.label}"
+                                   id="resId1c9">
+                            <af:outputText value="#{row.ModifiedBy}"
+                                           shortDesc="#{bindings.ProductView1.hints.ModifiedBy.tooltip}" id="ot9"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ProductView1.hints.ModifiedDate.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.ProductView1.hints.ModifiedDate.label}"
+                                   id="resId1c10">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.ModifiedDate.value}"
+                                              id="id2">
+                                    <af:convertDateTime pattern="#{bindings.ProductView1.hints.ModifiedDate.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:outputText value="#{row.ModifiedDate}"
+                                           shortDesc="#{bindings.ProductView1.hints.ModifiedDate.tooltip}" id="ot10">
+                                <af:convertDateTime pattern="#{bindings.ProductView1.hints.ModifiedDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
+                    <af:button text="CREATE" id="b1" action="createProd"/>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

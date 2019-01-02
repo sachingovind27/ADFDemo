@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Account"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ACCOUNT"
+  AliasName="Account"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AccId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="ACC_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ACCOUNT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="AccName"
+    Precision="100"
+    ColumnName="ACC_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AccUrl"
+    Precision="100"
+    ColumnName="ACC_URL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ParentAccId"
+    Precision="10"
+    Scale="0"
+    ColumnName="PARENT_ACC_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ACCOUNT"/>
+  <Attribute
+    Name="Ceo"
+    Precision="100"
+    ColumnName="CEO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmpCount"
+    Precision="10"
+    Scale="0"
+    ColumnName="EMP_COUNT"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ACCOUNT"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="ACCOUNT"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="100"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="ACCOUNT"/>
+  <Attribute
+    Name="AddrId"
+    Precision="10"
+    Scale="0"
+    ColumnName="ADDR_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ACCOUNT"/>
+  <AccessorAttribute
+    Name="AccountContactMapping"
+    Association="demo.model.eo.AccContactMapAccFkAssoc"
+    AssociationEnd="demo.model.eo.AccContactMapAccFkAssoc.AccountContactMapping"
+    AssociationOtherEnd="demo.model.eo.AccContactMapAccFkAssoc.Account"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Address"
+    Association="demo.model.eo.AccountAddressFkAssoc"
+    AssociationEnd="demo.model.eo.AccountAddressFkAssoc.Address"
+    AssociationOtherEnd="demo.model.eo.AccountAddressFkAssoc.Account"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Opportunity"
+    Association="demo.model.eo.OpporAccountFkAssoc"
+    AssociationEnd="demo.model.eo.OpporAccountFkAssoc.Opportunity"
+    AssociationOtherEnd="demo.model.eo.OpporAccountFkAssoc.Account"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AccountPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ACCOUNT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Account.AccId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccountAddressFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACCOUNT_ADDRESS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Account.AddrId"/>
+    </AttrArray>
+  </Key>
+</Entity>

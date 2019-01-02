@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="roleSearchPageDef"
+                Package="demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RoleView1" RangeSize="25" DataControl="AppModuleDataControl" id="RoleView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="RoleView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RoleView1Iterator" id="RoleView1">
+      <nodeDefinition DefName="demo.model.vo.RoleView" Name="RoleView10">
+        <AttrNames>
+          <Item Value="RoleId"/>
+          <Item Value="Name"/>
+          <Item Value="Desc1"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedDate"/>
+          <Item Value="Id"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

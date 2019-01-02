@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Invitee"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="INVITEE"
+  AliasName="Invitee"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="InviteeId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="INVITEE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="INVITEE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="InviteeType"
+    Precision="25"
+    ColumnName="INVITEE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INVITEE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentAppId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="APPOINTMENT_APP_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="INVITEE"/>
+  <Attribute
+    Name="InviteeMapId"
+    Precision="10"
+    Scale="0"
+    ColumnName="INVITEE_MAP_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="INVITEE"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INVITEE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="INVITEE"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="100"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INVITEE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="INVITEE"/>
+  <AccessorAttribute
+    Name="Appointment"
+    Association="demo.model.eo.InviteeAppFkAssoc"
+    AssociationEnd="demo.model.eo.InviteeAppFkAssoc.Appointment"
+    AssociationOtherEnd="demo.model.eo.InviteeAppFkAssoc.Invitee"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="InviteePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="INVITEE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Invitee.InviteeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InviteeAppFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="APPOINTMENT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INVITEE_APP_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Invitee.AppointmentAppId"/>
+    </AttrArray>
+  </Key>
+</Entity>

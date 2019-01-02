@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="createRole">
+    <default-activity>CreateRole</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="CreateRole">
+      <page>/CreateRole.jsf</page>
+    </view>
+    <task-flow-return id="backToSearch">
+      <outcome>
+        <name>backToSearch</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>CreateRole</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toCaller</from-outcome>
+        <to-activity-id>backToSearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

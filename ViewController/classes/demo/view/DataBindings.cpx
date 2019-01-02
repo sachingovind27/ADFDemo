@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="demo.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/roleSearch.jsff" usageId="demo_view_roleSearchPageDef"/>
+    <page path="/roleEdit.jsff" usageId="demo_view_roleEditPageDef"/>
+    <page path="/roles.jsf" usageId="demo_view_rolesPageDef"/>
+    <page path="/admin.jsf" usageId="demo_view_adminPageDef"/>
+    <page path="/searchProduct.jsff" usageId="demo_view_searchProductPageDef"/>
+    <page path="/CreateProduct.jsff" usageId="demo_view_CreateProductPageDef"/>
+    <page path="/CreateProduct.jsf" usageId="demo_view_CreateProductPageDef1"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="demo_view_roleSearchPageDef" path="demo.view.pageDefs.roleSearchPageDef"/>
+    <page id="demo_view_roleEditPageDef" path="demo.view.pageDefs.roleEditPageDef"/>
+    <page id="demo_view_rolesPageDef" path="demo.view.pageDefs.rolesPageDef"/>
+    <page id="demo_view_adminPageDef" path="demo.view.pageDefs.adminPageDef"/>
+    <page id="demo_view_searchProductPageDef" path="demo.view.pageDefs.searchProductPageDef"/>
+    <page id="demo_view_CreateProductPageDef" path="demo.view.pageDefs.CreateProductPageDef"/>
+    <page id="demo_view_CreateProductPageDef1" path="demo.view.pageDefs.CreateProductPageDef1"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="demo.model.eo"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

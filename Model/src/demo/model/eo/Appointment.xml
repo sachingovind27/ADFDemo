@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Appointment"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="APPOINTMENT"
+  AliasName="Appointment"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AppName"
+    Precision="100"
+    ColumnName="APP_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="APP_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="AppDesc"
+    Precision="1000"
+    ColumnName="APP_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppStartDate"
+    ColumnName="APP_START_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="AppEndTime"
+    ColumnName="APP_END_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="AppLocation"
+    Precision="100"
+    ColumnName="APP_LOCATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OpportunityId"
+    Precision="10"
+    Scale="0"
+    ColumnName="OPPORTUNITY_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="100"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="AppointmentMapping"
+    Association="demo.model.eo.AppMapAppFkAssoc"
+    AssociationEnd="demo.model.eo.AppMapAppFkAssoc.AppointmentMapping"
+    AssociationOtherEnd="demo.model.eo.AppMapAppFkAssoc.Appointment"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Invitee"
+    Association="demo.model.eo.InviteeAppFkAssoc"
+    AssociationEnd="demo.model.eo.InviteeAppFkAssoc.Invitee"
+    AssociationOtherEnd="demo.model.eo.InviteeAppFkAssoc.Appointment"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AppointmentPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="APPOINTMENT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Appointment.AppId"/>
+    </AttrArray>
+  </Key>
+</Entity>

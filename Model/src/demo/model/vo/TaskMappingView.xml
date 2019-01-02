@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TaskMappingView"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="TaskMapping"
+    Entity="demo.model.eo.TaskMapping"/>
+  <ViewAttribute
+    Name="TaskTaskId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TaskTaskId"
+    EntityUsage="TaskMapping"
+    AliasName="TASK_TASK_ID"/>
+  <ViewAttribute
+    Name="TaskMapType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TaskMapType"
+    EntityUsage="TaskMapping"
+    AliasName="TASK_MAP_TYPE"/>
+  <ViewAttribute
+    Name="TaskMapId"
+    PrecisionRule="true"
+    EntityAttrName="TaskMapId"
+    EntityUsage="TaskMapping"
+    AliasName="TASK_MAP_ID"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TaskMapping"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TaskMapping"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="ModifiedBy"
+    PrecisionRule="true"
+    EntityAttrName="ModifiedBy"
+    EntityUsage="TaskMapping"
+    AliasName="MODIFIED_BY"/>
+  <ViewAttribute
+    Name="ModifiedDate"
+    PrecisionRule="true"
+    EntityAttrName="ModifiedDate"
+    EntityUsage="TaskMapping"
+    AliasName="MODIFIED_DATE"/>
+</ViewObject>

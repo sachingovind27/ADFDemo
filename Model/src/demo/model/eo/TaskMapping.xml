@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TaskMapping"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TASK_MAPPING"
+  AliasName="TaskMapping"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="TaskTaskId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="TASK_TASK_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASK_MAPPING"/>
+  <Attribute
+    Name="TaskMapType"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="TASK_MAP_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASK_MAPPING"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaskMapId"
+    Precision="10"
+    Scale="0"
+    ColumnName="TASK_MAP_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASK_MAPPING"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASK_MAPPING">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TASK_MAPPING"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="100"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASK_MAPPING">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TASK_MAPPING"/>
+  <AccessorAttribute
+    Name="Task"
+    Association="demo.model.eo.TaskMapTaskFkAssoc"
+    AssociationEnd="demo.model.eo.TaskMapTaskFkAssoc.Task"
+    AssociationOtherEnd="demo.model.eo.TaskMapTaskFkAssoc.TaskMapping"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="TaskMappingPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="TASK_MAPPING_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.TaskMapping.TaskMapType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TaskMapTaskFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TASK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TASK_MAP_TASK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.TaskMapping.TaskTaskId"/>
+    </AttrArray>
+  </Key>
+</Entity>

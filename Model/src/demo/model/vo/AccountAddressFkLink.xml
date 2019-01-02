@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AccountAddressFkLink"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="demo.model.eo.AccountAddressFkAssoc">
+  <ViewLinkDefEnd
+    Name="AddressView"
+    Cardinality="1"
+    Source="true"
+    Owner="demo.model.vo.AddressView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="AddressView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.vo.AddressView.AddrId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="AccountView"
+    Cardinality="-1"
+    Owner="demo.model.vo.AccountView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="AccountView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.vo.AccountView.AddrId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

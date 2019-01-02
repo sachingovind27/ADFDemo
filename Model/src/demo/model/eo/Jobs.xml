@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Jobs"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="JOBS"
+  AliasName="Jobs"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Jobid"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="JOBID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Jobtitle"
+    Precision="20"
+    ColumnName="JOBTITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Employees"
+    Association="demo.model.eo.FkJobidAssoc"
+    AssociationEnd="demo.model.eo.FkJobidAssoc.Employees"
+    AssociationOtherEnd="demo.model.eo.FkJobidAssoc.Jobs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC00169566"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00169566"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.eo.Jobs.Jobid"/>
+    </AttrArray>
+  </Key>
+</Entity>
