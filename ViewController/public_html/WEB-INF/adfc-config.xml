@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <metadata-resource id="__4">/WEB-INF/createRole.xml</metadata-resource>
   <view id="view1">
     <page>/admin.jsf</page>
   </view>
+  <task-flow-call id="createRole1">
+    <task-flow-reference>
+      <document>/WEB-INF/createRole.xml</document>
+      <id>createRole</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <view id="view2">
+    <page>/CreateRole.jsf</page>
+  </view>
+  <task-flow-return id="returnAdmin1">
+    <description>returnAdmin1</description>
+    <display-name>returnAdmin1</display-name>
+    <icon id="returnAdmin1"/>
+    <outcome>
+      <name>returnAdmin1</name>
+    </outcome>
+  </task-flow-return>
+  <control-flow-rule id="__2">
+    <from-activity-id>view1</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome>createRole1</from-outcome>
+      <to-activity-id>createRole1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__5">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__6">
+      <from-outcome>createRoles</from-outcome>
+      <to-activity-id>view2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__9">
+    <from-activity-id>view2</from-activity-id>
+    <control-flow-case id="__10">
+      <from-outcome>returnAdmin</from-outcome>
+      <to-activity-id>returnAdmin1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__1">
     <managed-bean-name>PopupManager</managed-bean-name>
     <managed-bean-class>demo.manager.PopupManager</managed-bean-class>

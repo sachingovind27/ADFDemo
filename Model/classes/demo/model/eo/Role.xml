@@ -99,7 +99,6 @@
   <Attribute
     Name="Id"
     IsUnique="true"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="ID"

@@ -13,7 +13,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>CreateRole&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">186.66797</property>
+         name="y">186.53516</property>
       <property
          name="page">/CreateRole.jsf</property>
       <property
@@ -42,6 +42,6 @@
       <property
          name="fromOutcome">toCaller</property>
       <property
-         name="sdm:polyPoints">R50,328.0,186.60156,473.0,186.60156,L50</property>
+         name="sdm:polyPoints">R50,329.07144,186.46875,471.92856,186.60156,L50</property>
    </ControlFlowCase>
 </SDM>

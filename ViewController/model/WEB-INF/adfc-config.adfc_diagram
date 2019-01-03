@@ -9,14 +9,104 @@
       <property
          name="pageFragment">false</property>
       <property
-         name="x">316.0</property>
+         name="x">380.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>view1&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">212.86719</property>
+         name="y">161.60156</property>
       <property
          name="page">/admin.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createRole1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">createRole1</property>
+      <property
+         name="x">144.12207</property>
+      <property
+         name="y">162.96875</property>
+      <property
+         name="documentReference">/WEB-INF/createRole.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">createRole</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View15"
+      to="TaskFlowCall3">
+      <property
+         name="tosrcid">__3</property>
+      <property
+         name="fromOutcome">createRole1</property>
+      <property
+         name="fromsrcid">__2</property>
+      <property
+         name="sdm:polyPoints">L50,337.9303,161.53516,186.19177,162.90234,R50</property>
+   </ControlFlowCase>
+   <View
+      id="View5">
+      <property
+         name="activityId">view2</property>
+      <property
+         name="x">244.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>view2&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">295.73438</property>
+      <property
+         name="page">/CreateRole.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule6">
+      <property
+         name="activityId">*</property>
+      <property
+         name="x">13.0</property>
+      <property
+         name="y">298.8672</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="WildcardControlFlowRule6"
+      to="View5">
+      <property
+         name="fromOutcome">createRoles</property>
+      <property
+         name="sdm:polyPoints">R50,50.069687,299.30075,201.93031,295.66797,L50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn11">
+      <property
+         name="activityId">returnAdmin1</property>
+      <property
+         name="x">503.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>returnAdmin1&lt;/b>&lt;/p>&lt;p>Activity ID:  returnAdmin1&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  returnAdmin1&lt;/p>&lt;p/>&lt;p>&lt;em>returnAdmin1&lt;br/>&lt;/em>&lt;/p></property>
+      <property
+         name="y">293.3711</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="View5"
+      to="TaskFlowReturn11">
+      <property
+         name="fromOutcome">returnAdmin</property>
+      <property
+         name="sdm:polyPoints">R50,286.0697,295.66797,461.4303,293.30466,L50</property>
+   </ControlFlowCase>
 </SDM>

@@ -233,7 +233,17 @@
                         </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>
-            </af:panelGridLayout>
+            </af:panelGridLayout>            
         </af:form>
+        <af:panelGridLayout id="pgl5">
+            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                    <f:facet name="createRoleFacet">
+                    <af:button text="CREATE" id="b8" action="createRole1"/>
+                    </f:facet>
+                </af:gridCell>
+            </af:gridRow>
+        </af:panelGridLayout>
+        
     </af:document>
 </f:view>
